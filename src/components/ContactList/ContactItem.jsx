@@ -3,10 +3,10 @@ import css from './ContactItem.module.css';
 
 export default function ContactItem({ name, number, onDelete, id }) {
   return (
-    <li>
+    <li className={css.li}>
       <span className={css.names}>{name}:</span>
-      <span>{number}</span>
-      <button type="button" onClick={() => onDelete(id)}>
+      <span className={css.phones}>{number}</span>
+      <button className={css.buttons} type="button" onClick={() => onDelete(id)}>
         Delete
       </button>
     </li>
