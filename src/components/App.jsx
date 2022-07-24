@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import Section from './Section/Section';
 import { Form } from './Form/Form';
-import { Filter } from './Filter/Filter';
+import Filter from './Filter/Filter';
 import { ContactList } from './ContactList/ContactList';
 
 export class App extends Component {
