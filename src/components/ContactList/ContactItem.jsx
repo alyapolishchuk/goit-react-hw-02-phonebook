@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import css from './ContactItem.module.css';
 
 export default function ContactItem({ name, number, onDelete, id }) {
   return (
     <li>
-      <span>{name}:</span>
+      <span className={css.names}>{name}:</span>
       <span>{number}</span>
       <button type="button" onClick={() => onDelete(id)}>
         Delete
