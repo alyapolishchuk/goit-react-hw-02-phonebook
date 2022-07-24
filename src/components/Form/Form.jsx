@@ -12,18 +12,15 @@ export class Form extends Component {
     number: '',
   };
 
-  handlerChange = ({ target: { name, value } }) => {
+  handlerCreate = ({ target: { name, value } }) => {
     this.setState({ [name]: value });
   };
 
   onSubmit = event => {
     event.preventDefault();
     const id = nanoid();
-
     const contact = { ...this.state, id };
-
     this.props.addContact(contact);
-
     this.setState({
       name: '',
       number: '',
@@ -43,7 +40,7 @@ export class Form extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             value={name}
-            onChange={this.handlerChange}
+            onChange={this.handlerCreate}
           />
         </label>
         <label>
@@ -55,7 +52,7 @@ export class Form extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             value={number}
-            onChange={this.handlerChange}
+            onChange={this.handlerCreate}
           />
         </label>
         <button type="submit">Add contact</button>

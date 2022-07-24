@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import Section from './Section/Section';
 import { Form } from './Form/Form';
-import Filter from './Filter/Filter';
+import Section from './Section/Section';
 import ContactList from './ContactList/ContactList';
+import Filter from './Filter/Filter';
 
 export class App extends Component {
   state = {
@@ -46,7 +46,7 @@ export class App extends Component {
     );
   };
 
-  deleteContact = id => {
+  onDelete = id => {
     this.setState({
       contacts: this.state.contacts.filter(contact => id !== contact.id),
     });
@@ -54,7 +54,7 @@ export class App extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <Section title="Phonebook">
           <Form addContact={this.addUserData}> </Form>
         </Section>
@@ -66,10 +66,10 @@ export class App extends Component {
           />
           <ContactList
             contacts={this.filterContacts()}
-            deleteContact={this.deleteContact}
+            onDelete={this.onDelete}
           />
         </Section>
-      </>
+      </div>
     );
   }
 }

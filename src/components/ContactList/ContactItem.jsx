@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types';
 
-export default function ContactItem({ name, number, deleteContact, id }) {
+export default function ContactItem({ name, number, onDelete, id }) {
   return (
     <li>
       <span>{name}:</span>
       <span>{number}</span>
-      <button type="button" onClick={() => deleteContact(id)}>
+      <button type="button" onClick={() => onDelete(id)}>
         Delete
       </button>
     </li>
@@ -15,6 +15,6 @@ export default function ContactItem({ name, number, deleteContact, id }) {
 ContactItem.propTypes = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  deleteContact: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
 };
